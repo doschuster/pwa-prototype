@@ -1,0 +1,20 @@
+<form class="form" [formGroup]="dataForm" (ngSubmit)="onPostData()">
+  
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+    </label>
+  
+    <label>
+      Land:
+      <input type="text" formControlName="country">
+    </label>
+
+    <button type="submit">Abschicken</button>
+  
+  </form>
+
+  <div *ngFor="let formPost of formData">
+      {{ formPost.name }}
+      {{ formPost.country }}
+  </div>
