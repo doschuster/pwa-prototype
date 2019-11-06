@@ -17,7 +17,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/sw-custom.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,6 +12,7 @@ export class DataFormService {
   ) { }
 
   postFormData(form: FormGroup) {
+    navigator.serviceWorker.getRegistration().then(() => navigator.serviceWorker.ready).then(reg => reg.sync.register('example-sync'));
     return this.http.post('http://localhost:3000/data', form.value);
   }
   getFormData() {
