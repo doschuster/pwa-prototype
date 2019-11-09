@@ -24,9 +24,7 @@ export class DataFormComponent implements OnInit {
   }
 
   onPostData() {
-    this.dataService.postFormData(this.dataForm).subscribe(data => {
-      console.debug(data);
-    });
+    this.dataService.postFormData(this.dataForm)
   }
 
 }
