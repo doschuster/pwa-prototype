@@ -16,15 +16,18 @@ export class DataFormComponent implements OnInit {
   });
 
   constructor(
-    private dataService: DataFormService
+    public dataService: DataFormService
   ) { }
 
   ngOnInit() {
-    this.dataService.getFormData().subscribe(data => this.formData = data);
+    this.dataService.getFormData();
   }
 
   onPostData() {
-    this.dataService.postFormData(this.dataForm)
+    this.dataService.postFormData(this.dataForm);
+  }
+  getFormData() {
+    this.dataService.getFormData();
   }
 
 }

@@ -13,8 +13,10 @@
     <button type="submit">Abschicken</button>
   
   </form>
-
-  <div *ngFor="let formPost of formData">
-      {{ formPost.name }}
-      {{ formPost.country }}
+  <div class="data-list" *ngFor="let formPost of dataService.testData">
+    <span *ngIf="!formPost.sync" style="color: red;">Ist online</span>
+      <span>Name: {{ formPost.name }}</span>
+      <span>Land: {{ formPost.country }}</span>
   </div>
+
+  <button (click)="getFormData()"></button>
