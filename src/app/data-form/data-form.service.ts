@@ -13,9 +13,12 @@ export class DataFormService {
   ) { 
 
     const channel = new BroadcastChannel('sw-messages');
-    channel.addEventListener('message', event => {
-      console.log('Received', event.data);
-    });
+    fromEvent(channel, 'message').subscribe(event => {
+      console.log('Received', event);
+    })
+    // channel.addEventListener('message', event => {
+    //   console.log('Received', event.data);
+    // });
   }
 
   postFormData(form: FormGroup) {
