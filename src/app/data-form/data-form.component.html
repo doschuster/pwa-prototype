@@ -14,8 +14,8 @@
   
   </form>
   <div class="data-list" *ngFor="let formPost of dataService.testData">
-    <span *ngIf="!formPost.sync" style="color: red;">Ist online</span>
-      <span>Name: {{ formPost.name }}</span>
+    <span *ngIf="formPost.sync" style="color: red; margin-right: 5px;">(Ist online)</span>
+      <span style="margin-right: 4px;">Name: {{ formPost.name }}</span>
       <span>Land: {{ formPost.country }}</span>
   </div>
 
