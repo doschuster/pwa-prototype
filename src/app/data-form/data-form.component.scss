@@ -1,6 +1,17 @@
 .form {
-    margin-top: 2rem;
+  margin-top: 2rem;
+  display: flex;
+
+  .form-input-field {
+    padding: 1rem;
+  }
 }
+
 .data-list {
-    margin: 5px;
+  margin: 5px;
+}
+.data-content {
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
 }

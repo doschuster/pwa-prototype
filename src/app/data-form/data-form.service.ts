@@ -64,4 +64,7 @@ export class DataFormService {
       items.map(item => this.testData.push(item));
     });
   }
+  getFormServerData() {
+    return this.http.get('http://localhost:3000/data');
+  }
 }

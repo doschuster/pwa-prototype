@@ -1,22 +1,36 @@
-<form class="form" [formGroup]="dataForm" (ngSubmit)="onPostData()">
-  
-    <label>
-      Name:
-      <input type="text" formControlName="name">
-    </label>
-  
-    <label>
-      Land:
-      <input type="text" formControlName="country">
-    </label>
+<div class="data-content">
+  <form [formGroup]="dataForm" (ngSubmit)="onPostData()">
+    <div class="form">
+      <div class="form-input-field">
+        <kendo-textbox-container floatingLabel="Name">
+          <input kendoTextBox formControlName="name" />
+        </kendo-textbox-container>
+      </div>
+      <div class="form-input-field">
+        <kendo-textbox-container floatingLabel="Land">
+          <input kendoTextBox formControlName="country" />
+        </kendo-textbox-container>
+      </div>
+    </div>
 
-    <button type="submit">Abschicken</button>
-  
+    <div style="padding-left: 3rem; padding-top: 2rem;">
+      <button kendoButton type="submit">Abschicken</button>
+
+    </div>
   </form>
-  <div class="data-list" *ngFor="let formPost of dataService.testData">
-    <span *ngIf="formPost.sync" style="color: red; margin-right: 5px;">(Ist online)</span>
+
+  <div>
+    <div class="data-list" *ngFor="let formPost of dataService.testData">
+      <span *ngIf="formPost.sync" style="color: red; margin-right: 5px;">(Ist online)</span>
       <span style="margin-right: 4px;">Name: {{ formPost.name }}</span>
       <span>Land: {{ formPost.country }}</span>
-  </div>
+    </div>
 
-  <button (click)="getFormData()"></button>
+    <button (click)="getFormData()"></button>
+    
+    Serverdaten:
+    <div *ngFor="let serverData of formServerData">
+      Name: {{ serverData.name }}
+    </div>
+  </div>
+</div>

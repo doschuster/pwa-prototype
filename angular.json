@@ -30,10 +30,12 @@
               "src/sw-custom.js"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-material/dist/all.css"
+              },
               "src/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -99,6 +101,9 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.scss"
             ],
             "scripts": []
@@ -130,6 +135,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "pwa-prototype"
 }

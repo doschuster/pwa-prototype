@@ -8,6 +8,12 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { NgxIndexedDBModule, DBConfig } from 'ngx-indexed-db';
+import { LayoutModule } from '@progress/kendo-angular-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+
+
+
 
 const dbConfig: DBConfig  = {name: 'MyDb', version: 1, objectStoresMeta: [
   {
@@ -25,14 +31,17 @@ const dbConfig: DBConfig  = {name: 'MyDb', version: 1, objectStoresMeta: [
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ServiceWorkerModule.register('/sw-custom.js', { enabled: environment.production }),
-    NgxIndexedDBModule.forRoot(dbConfig)
+    NgxIndexedDBModule.forRoot(dbConfig),
+    LayoutModule,
+    BrowserAnimationsModule,
+    ButtonsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

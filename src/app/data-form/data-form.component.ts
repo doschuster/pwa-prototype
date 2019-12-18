@@ -9,6 +9,7 @@ import { DataFormService } from './data-form.service';
 })
 export class DataFormComponent implements OnInit {
   formData: any;
+  formServerData: any;
 
   dataForm = new FormGroup({
     name: new FormControl(''),
@@ -21,6 +22,7 @@ export class DataFormComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getFormData();
+    this.dataService.getFormServerData().subscribe(item => this.formServerData = item);
   }
 
   onPostData() {

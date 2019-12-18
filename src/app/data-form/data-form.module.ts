@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DataFormComponent } from './data-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
 
 const routes: Routes = [
   { path: '', component: DataFormComponent},
@@ -15,7 +17,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    InputsModule,
+    ButtonsModule
   ]
 })
 export class DataFormModule { }
